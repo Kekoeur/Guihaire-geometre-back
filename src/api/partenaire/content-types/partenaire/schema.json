@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "partenaires",
+  "info": {
+    "singularName": "partenaire",
+    "pluralName": "partenaires",
+    "displayName": "Nos Partenaires",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Heading": {
+      "type": "dynamiczone",
+      "components": [
+        "section.heading-summary-animated",
+        "section.heading-summary-basic"
+      ]
+    },
+    "Section": {
+      "type": "dynamiczone",
+      "components": [
+        "section.side-summary",
+        "section.section-with-framed-text",
+        "section.section-location",
+        "section.image-between-framed",
+        "section.heading-summary-animated",
+        "section.heading-summary-basic",
+        "section.framed-between-image",
+        "section.display-gallery",
+        "section.display-framed-image",
+        "section.display-form",
+        "section.display-btn",
+        "section.carrousel",
+        "section.basic-section",
+        "divider.line-divider",
+        "divider.image-divider"
+      ]
+    }
+  }
+}

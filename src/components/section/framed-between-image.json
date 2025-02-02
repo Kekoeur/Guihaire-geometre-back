@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_section_framed_between_images",
+  "info": {
+    "displayName": "FramedBetweenImage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "LeftImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "FramedText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-text"
+    },
+    "RightImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    }
+  }
+}

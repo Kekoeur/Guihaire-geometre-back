@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_type_placeholders",
+  "info": {
+    "displayName": "Placeholder"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "Text": {
+      "type": "string"
+    }
+  }
+}

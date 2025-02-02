@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_type_gallery_elts",
+  "info": {
+    "displayName": "GalleryElt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "Size": {
+      "type": "integer",
+      "required": false,
+      "min": 1,
+      "max": 100
+    }
+  }
+}

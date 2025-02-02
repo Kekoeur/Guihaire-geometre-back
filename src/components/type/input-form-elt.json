@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_type_input_form_elts",
+  "info": {
+    "displayName": "InputFormElt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Placeholder": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.placeholder"
+    },
+    "Size": {
+      "default": 12,
+      "max": 12,
+      "min": 1,
+      "type": "integer"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Text",
+        "LongText",
+        "Mail",
+        "Phone",
+        "Adress",
+        "Files"
+      ]
+    },
+    "DataName": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_divider_line_dividers",
+  "info": {
+    "displayName": "LineDivider"
+  },
+  "options": {},
+  "attributes": {
+    "LineColor": {
+      "type": "customField",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
+      "customField": "plugin::color-picker.color"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_basic_sections",
+  "info": {
+    "displayName": "BasicSection"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.title-summary-basic"
+    }
+  }
+}

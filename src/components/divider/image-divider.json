@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_divider_image_dividers",
+  "info": {
+    "displayName": "ImageDivider"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    }
+  }
+}

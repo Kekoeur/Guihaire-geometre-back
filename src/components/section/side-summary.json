@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_section_side_summaries",
+  "info": {
+    "displayName": "SideSummary",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Summary": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.title-summary-basic"
+    },
+    "SideImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "SideLeft",
+        "SideRight"
+      ]
+    }
+  }
+}

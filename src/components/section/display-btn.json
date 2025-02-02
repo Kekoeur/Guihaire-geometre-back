@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_section_display_btns",
+  "info": {
+    "displayName": "DisplayBtn"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.txt-btn"
+    }
+  }
+}

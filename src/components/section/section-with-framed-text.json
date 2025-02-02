@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_section_section_with_framed_texts",
+  "info": {
+    "displayName": "SectionWithFramedText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "FramedText": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.framed-text"
+    }
+  }
+}

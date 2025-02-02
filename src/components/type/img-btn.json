@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_type_img_btns",
+  "info": {
+    "displayName": "ImageBtn"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "RedirUrl": {
+      "type": "string"
+    }
+  }
+}

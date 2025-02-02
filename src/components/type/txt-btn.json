@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_type_txt_btns",
+  "info": {
+    "displayName": "TextBtn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string"
+    },
+    "RedirUrl": {
+      "type": "string"
+    }
+  }
+}

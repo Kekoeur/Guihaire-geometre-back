@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_animation_type_animations",
+  "info": {
+    "displayName": "TypeAnimation"
+  },
+  "options": {},
+  "attributes": {
+    "TextBefore": {
+      "type": "text"
+    },
+    "TypingElt": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.list-elements"
+    },
+    "TextAfter": {
+      "type": "text"
+    },
+    "DelayAnimation": {
+      "type": "biginteger"
+    }
+  }
+}

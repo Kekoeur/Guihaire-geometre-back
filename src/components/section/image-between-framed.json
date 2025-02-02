@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_section_image_between_frameds",
+  "info": {
+    "displayName": "ImageBetweenFramed"
+  },
+  "options": {},
+  "attributes": {
+    "LeftFramed": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-text"
+    },
+    "Image": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "RightFramed": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-text"
+    }
+  }
+}

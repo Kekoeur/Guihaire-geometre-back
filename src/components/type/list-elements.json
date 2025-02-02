@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_type_list_elements",
+  "info": {
+    "displayName": "ListElements"
+  },
+  "options": {},
+  "attributes": {
+    "Element": {
+      "type": "string"
+    }
+  }
+}

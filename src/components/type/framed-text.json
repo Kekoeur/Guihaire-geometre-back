@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_type_framed_texts",
+  "info": {
+    "displayName": "FramedText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Text": {
+      "type": "blocks"
+    }
+  }
+}

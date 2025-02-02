@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_carrousels",
+  "info": {
+    "displayName": "Carrousel"
+  },
+  "options": {},
+  "attributes": {
+    "Element": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.image"
+    }
+  }
+}

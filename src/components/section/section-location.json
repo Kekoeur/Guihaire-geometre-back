@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_section_section_locations",
+  "info": {
+    "displayName": "SectionLocation",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Plan": {
+      "type": "component",
+      "repeatable": false,
+      "component": "media.image"
+    },
+    "AdressTitle": {
+      "type": "string"
+    },
+    "Adress": {
+      "type": "string"
+    },
+    "RedirGPS": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.img-btn"
+    },
+    "ScheduleTitle": {
+      "type": "string"
+    },
+    "Schedule": {
+      "type": "blocks"
+    },
+    "OfficeImg": {
+      "type": "component",
+      "repeatable": true,
+      "component": "media.image"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_type_title_summary_animateds",
+  "info": {
+    "displayName": "TitleSummaryAnimated",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "component",
+      "repeatable": false,
+      "component": "animation.type-animation"
+    },
+    "Summary": {
+      "type": "blocks"
+    }
+  }
+}

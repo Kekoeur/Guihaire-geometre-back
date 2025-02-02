@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_media_images",
+  "info": {
+    "displayName": "MediaImage",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ImgTitle": {
+      "type": "string"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ImgAlt": {
+      "type": "string"
+    }
+  }
+}

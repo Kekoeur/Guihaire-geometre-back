@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_section_display_galleries",
+  "info": {
+    "displayName": "DisplayGallery",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Element": {
+      "type": "component",
+      "repeatable": true,
+      "component": "type.gallery-elt"
+    }
+  }
+}
