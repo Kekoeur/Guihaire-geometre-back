@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_display_framed_images",
   "info": {
-    "displayName": "DisplayFramedImage"
+    "displayName": "DisplayFramedImage",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,12 +14,10 @@
       "repeatable": true,
       "component": "type.framed-img"
     },
-    "Type": {
-      "type": "enumeration",
-      "enum": [
-        "Transparent",
-        "Colored"
-      ]
+    "FramedType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-type"
     }
   }
 }

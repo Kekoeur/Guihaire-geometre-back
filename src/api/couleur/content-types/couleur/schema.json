@@ -1,0 +1,133 @@
+{
+  "kind": "singleType",
+  "collectionName": "couleurs",
+  "info": {
+    "singularName": "couleur",
+    "pluralName": "couleurs",
+    "displayName": "Couleur",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FondPrincipal": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1,
+      "required": false
+    },
+    "ComplementairePrincipal": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "FondPrincipalOpaque": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "TextePrincipal": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "TextePrincipalOpaque": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "FondSecondaire": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "ComplementaireSecondaire": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "FondSecondaireOpaque": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "TexteSecondaire": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "TexteSecondaireOpaque": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "Alternative": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "GradientSecondaire": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ],
+      "max": 1
+    },
+    "GradientPrincipal": {
+      "type": "dynamiczone",
+      "components": [
+        "couleur.linear-gradient",
+        "couleur.couleur",
+        "couleur.couleur-pourcent"
+      ]
+    }
+  }
+}

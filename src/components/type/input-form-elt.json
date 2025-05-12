@@ -27,7 +27,7 @@
         "LongText",
         "Mail",
         "Phone",
-        "Adress",
+        "Address",
         "Files"
       ]
     },

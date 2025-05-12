@@ -14,10 +14,10 @@
       "repeatable": false,
       "component": "media.image"
     },
-    "AdressTitle": {
+    "AddressTitle": {
       "type": "string"
     },
-    "Adress": {
+    "Address": {
       "type": "string"
     },
     "RedirGPS": {
@@ -31,7 +31,7 @@
     "Schedule": {
       "type": "blocks"
     },
-    "OfficeImg": {
+    "LocationImg": {
       "type": "component",
       "repeatable": true,
       "component": "media.image"

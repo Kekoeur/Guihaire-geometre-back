@@ -1,7 +1,8 @@
 {
   "collectionName": "components_section_image_between_frameds",
   "info": {
-    "displayName": "ImageBetweenFramed"
+    "displayName": "ImageBetweenFramed",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,6 +20,11 @@
       "type": "component",
       "repeatable": false,
       "component": "type.framed-text"
+    },
+    "FramedType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-type"
     }
   }
 }

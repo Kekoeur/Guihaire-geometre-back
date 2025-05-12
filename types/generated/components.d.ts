@@ -13,6 +13,57 @@ export interface AnimationTypeAnimation extends Struct.ComponentSchema {
   };
 }
 
+export interface CouleurCouleur extends Struct.ComponentSchema {
+  collectionName: 'components_couleur_couleurs';
+  info: {
+    displayName: 'Couleur';
+  };
+  attributes: {
+    CouleurBasic: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface CouleurCouleurPourcent extends Struct.ComponentSchema {
+  collectionName: 'components_couleur_couleur_pourcents';
+  info: {
+    displayName: 'CouleurPourcent';
+  };
+  attributes: {
+    Couleur: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    Pourcent: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 100;
+        },
+        number
+      >;
+  };
+}
+
+export interface CouleurLinearGradient extends Struct.ComponentSchema {
+  collectionName: 'components_couleur_linear_gradients';
+  info: {
+    description: '';
+    displayName: 'LinearGradient';
+  };
+  attributes: {
+    DegreAngle: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 360;
+        },
+        number
+      >;
+    GradientCouleur: Schema.Attribute.Component<
+      'couleur.couleur-pourcent',
+      true
+    >;
+    Type: Schema.Attribute.Enumeration<['color-stop', 'color-hint']>;
+  };
+}
+
 export interface DividerImageDivider extends Struct.ComponentSchema {
   collectionName: 'components_divider_image_dividers';
   info: {
@@ -31,6 +82,40 @@ export interface DividerLineDivider extends Struct.ComponentSchema {
   attributes: {
     LineColor: Schema.Attribute.String &
       Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+  };
+}
+
+export interface HeadingSummaryAnimated extends Struct.ComponentSchema {
+  collectionName: 'components_heading_summaries_animateds';
+  info: {
+    description: '';
+    displayName: 'SummaryAnimated';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'type.txt-btn', true>;
+    Image: Schema.Attribute.Component<'media.image', false>;
+    Summary: Schema.Attribute.Component<'type.title-summary-animated', true>;
+    Title: Schema.Attribute.String;
+    Type: Schema.Attribute.Enumeration<
+      ['MainHeading', 'SideHeadingLeft', 'SideHeadingRight']
+    >;
+  };
+}
+
+export interface HeadingSummaryBasic extends Struct.ComponentSchema {
+  collectionName: 'components_heading_summary_basics';
+  info: {
+    description: '';
+    displayName: 'SummaryBasic';
+  };
+  attributes: {
+    Button: Schema.Attribute.Component<'type.txt-btn', true>;
+    Image: Schema.Attribute.Component<'media.image', false>;
+    Summary: Schema.Attribute.Component<'type.title-summary-basic', true>;
+    Title: Schema.Attribute.String;
+    Type: Schema.Attribute.Enumeration<
+      ['MainHeading', 'SideHeadingLeft', 'SideHeadingRight']
+    >;
   };
 }
 
@@ -94,12 +179,13 @@ export interface SectionDisplayForm extends Struct.ComponentSchema {
 export interface SectionDisplayFramedImage extends Struct.ComponentSchema {
   collectionName: 'components_section_display_framed_images';
   info: {
+    description: '';
     displayName: 'DisplayFramedImage';
   };
   attributes: {
     Element: Schema.Attribute.Component<'type.framed-img', true>;
+    FramedType: Schema.Attribute.Component<'type.framed-type', false>;
     Title: Schema.Attribute.String;
-    Type: Schema.Attribute.Enumeration<['Transparent', 'Colored']>;
   };
 }
 
@@ -122,51 +208,20 @@ export interface SectionFramedBetweenImage extends Struct.ComponentSchema {
   };
   attributes: {
     FramedText: Schema.Attribute.Component<'type.framed-text', false>;
+    FramedType: Schema.Attribute.Component<'type.framed-type', false>;
     LeftImage: Schema.Attribute.Component<'media.image', false>;
     RightImage: Schema.Attribute.Component<'media.image', false>;
-  };
-}
-
-export interface SectionHeadingSummaryAnimated extends Struct.ComponentSchema {
-  collectionName: 'components_section_heading_summaries_animateds';
-  info: {
-    description: '';
-    displayName: 'HeadingSummaryAnimated';
-  };
-  attributes: {
-    Button: Schema.Attribute.Component<'type.txt-btn', true>;
-    Image: Schema.Attribute.Component<'media.image', false>;
-    Summary: Schema.Attribute.Component<'type.title-summary-animated', true>;
-    Title: Schema.Attribute.String;
-    Type: Schema.Attribute.Enumeration<
-      ['MainHeading', 'SideHeadingLeft', 'SideHeadingRight']
-    >;
-  };
-}
-
-export interface SectionHeadingSummaryBasic extends Struct.ComponentSchema {
-  collectionName: 'components_section_heading_summary_basics';
-  info: {
-    description: '';
-    displayName: 'HeadingSummaryBasic';
-  };
-  attributes: {
-    Button: Schema.Attribute.Component<'type.txt-btn', true>;
-    Image: Schema.Attribute.Component<'media.image', false>;
-    Summary: Schema.Attribute.Component<'type.title-summary-basic', true>;
-    Title: Schema.Attribute.String;
-    Type: Schema.Attribute.Enumeration<
-      ['MainHeading', 'SideHeadingLeft', 'SideHeadingRight']
-    >;
   };
 }
 
 export interface SectionImageBetweenFramed extends Struct.ComponentSchema {
   collectionName: 'components_section_image_between_frameds';
   info: {
+    description: '';
     displayName: 'ImageBetweenFramed';
   };
   attributes: {
+    FramedType: Schema.Attribute.Component<'type.framed-type', false>;
     Image: Schema.Attribute.Component<'media.image', false>;
     LeftFramed: Schema.Attribute.Component<'type.framed-text', false>;
     RightFramed: Schema.Attribute.Component<'type.framed-text', false>;
@@ -180,9 +235,9 @@ export interface SectionSectionLocation extends Struct.ComponentSchema {
     displayName: 'SectionLocation';
   };
   attributes: {
-    Adress: Schema.Attribute.String;
-    AdressTitle: Schema.Attribute.String;
-    OfficeImg: Schema.Attribute.Component<'media.image', true>;
+    Address: Schema.Attribute.String;
+    AddressTitle: Schema.Attribute.String;
+    LocationImg: Schema.Attribute.Component<'media.image', true>;
     Plan: Schema.Attribute.Component<'media.image', false>;
     RedirGPS: Schema.Attribute.Component<'type.img-btn', true>;
     Schedule: Schema.Attribute.Blocks;
@@ -199,6 +254,7 @@ export interface SectionSectionWithFramedText extends Struct.ComponentSchema {
   };
   attributes: {
     FramedText: Schema.Attribute.Component<'type.framed-text', true>;
+    FramedType: Schema.Attribute.Component<'type.framed-type', false>;
     Title: Schema.Attribute.String;
   };
 }
@@ -253,6 +309,16 @@ export interface TypeFramedText extends Struct.ComponentSchema {
   };
 }
 
+export interface TypeFramedType extends Struct.ComponentSchema {
+  collectionName: 'components_type_framed_types';
+  info: {
+    displayName: 'FramedType';
+  };
+  attributes: {
+    Type: Schema.Attribute.Enumeration<['transparent', 'colored']>;
+  };
+}
+
 export interface TypeGalleryElt extends Struct.ComponentSchema {
   collectionName: 'components_type_gallery_elts';
   info: {
@@ -264,7 +330,7 @@ export interface TypeGalleryElt extends Struct.ComponentSchema {
     Size: Schema.Attribute.Integer &
       Schema.Attribute.SetMinMax<
         {
-          max: 100;
+          max: 12;
           min: 1;
         },
         number
@@ -303,7 +369,7 @@ export interface TypeInputFormElt extends Struct.ComponentSchema {
       > &
       Schema.Attribute.DefaultTo<12>;
     Type: Schema.Attribute.Enumeration<
-      ['Text', 'LongText', 'Mail', 'Phone', 'Adress', 'Files']
+      ['Text', 'LongText', 'Mail', 'Phone', 'Address', 'Files']
     >;
   };
 }
@@ -361,6 +427,21 @@ export interface TypeTxtBtn extends Struct.ComponentSchema {
   attributes: {
     RedirUrl: Schema.Attribute.String;
     Text: Schema.Attribute.String;
+    Type: Schema.Attribute.Enumeration<
+      [
+        'basic',
+        'link',
+        'go-to',
+        'explore',
+        'explore2',
+        'explore3',
+        'excavated',
+        'excavated2',
+        'paper-plane',
+        'paper-plane2',
+      ]
+    > &
+      Schema.Attribute.DefaultTo<'basic'>;
   };
 }
 
@@ -368,8 +449,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'animation.type-animation': AnimationTypeAnimation;
+      'couleur.couleur': CouleurCouleur;
+      'couleur.couleur-pourcent': CouleurCouleurPourcent;
+      'couleur.linear-gradient': CouleurLinearGradient;
       'divider.image-divider': DividerImageDivider;
       'divider.line-divider': DividerLineDivider;
+      'heading.summary-animated': HeadingSummaryAnimated;
+      'heading.summary-basic': HeadingSummaryBasic;
       'media.image': MediaImage;
       'section.basic-section': SectionBasicSection;
       'section.carrousel': SectionCarrousel;
@@ -378,8 +464,6 @@ declare module '@strapi/strapi' {
       'section.display-framed-image': SectionDisplayFramedImage;
       'section.display-gallery': SectionDisplayGallery;
       'section.framed-between-image': SectionFramedBetweenImage;
-      'section.heading-summary-animated': SectionHeadingSummaryAnimated;
-      'section.heading-summary-basic': SectionHeadingSummaryBasic;
       'section.image-between-framed': SectionImageBetweenFramed;
       'section.section-location': SectionSectionLocation;
       'section.section-with-framed-text': SectionSectionWithFramedText;
@@ -387,6 +471,7 @@ declare module '@strapi/strapi' {
       'type.form': TypeForm;
       'type.framed-img': TypeFramedImg;
       'type.framed-text': TypeFramedText;
+      'type.framed-type': TypeFramedType;
       'type.gallery-elt': TypeGalleryElt;
       'type.img-btn': TypeImgBtn;
       'type.input-form-elt': TypeInputFormElt;

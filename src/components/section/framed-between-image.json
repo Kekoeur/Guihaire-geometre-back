@@ -20,6 +20,11 @@
       "type": "component",
       "repeatable": false,
       "component": "media.image"
+    },
+    "FramedType": {
+      "type": "component",
+      "repeatable": false,
+      "component": "type.framed-type"
     }
   }
 }

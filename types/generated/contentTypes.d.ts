@@ -369,91 +369,180 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiActiviteActivite extends Struct.CollectionTypeSchema {
-  collectionName: 'activites';
+export interface ApiCouleurCouleur extends Struct.SingleTypeSchema {
+  collectionName: 'couleurs';
   info: {
     description: '';
-    displayName: 'Activit\u00E9';
-    pluralName: 'activites';
-    singularName: 'activite';
+    displayName: 'Couleur';
+    pluralName: 'couleurs';
+    singularName: 'couleur';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    Alternative: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    ComplementairePrincipal: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    ComplementaireSecondaire: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Heading: Schema.Attribute.DynamicZone<
-      ['section.heading-summary-animated', 'section.heading-summary-basic']
+    FondPrincipal: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    FondPrincipalOpaque: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    FondSecondaire: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    FondSecondaireOpaque: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    GradientPrincipal: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
     >;
+    GradientSecondaire: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::activite.activite'
+      'api::couleur.couleur'
     > &
       Schema.Attribute.Private;
-    Nom: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    Section: Schema.Attribute.DynamicZone<
-      [
-        'section.side-summary',
-        'section.section-with-framed-text',
-        'section.section-location',
-        'section.image-between-framed',
-        'section.heading-summary-animated',
-        'section.heading-summary-basic',
-        'section.framed-between-image',
-        'section.display-gallery',
-        'section.display-framed-image',
-        'section.display-form',
-        'section.display-btn',
-        'section.carrousel',
-        'section.basic-section',
-        'divider.line-divider',
-        'divider.image-divider',
-      ]
-    >;
+    TextePrincipal: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    TextePrincipalOpaque: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    TexteSecondaire: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
+    TexteSecondaireOpaque: Schema.Attribute.DynamicZone<
+      ['couleur.linear-gradient', 'couleur.couleur', 'couleur.couleur-pourcent']
+    > &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+        },
+        number
+      >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
   };
 }
 
-export interface ApiContactContact extends Struct.SingleTypeSchema {
-  collectionName: 'contacts';
+export interface ApiPagePage extends Struct.CollectionTypeSchema {
+  collectionName: 'pages';
   info: {
     description: '';
-    displayName: 'Contact';
-    pluralName: 'contacts';
-    singularName: 'contact';
+    displayName: 'Pages';
+    pluralName: 'pages';
+    singularName: 'page';
   };
   options: {
     draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Heading: Schema.Attribute.DynamicZone<
-      ['section.heading-summary-animated', 'section.heading-summary-basic']
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contact.contact'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
+    Nom: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
-    Section: Schema.Attribute.DynamicZone<
+    Sections: Schema.Attribute.DynamicZone<
       [
         'section.side-summary',
         'section.section-with-framed-text',
         'section.section-location',
         'section.image-between-framed',
-        'section.heading-summary-animated',
-        'section.heading-summary-basic',
         'section.framed-between-image',
         'section.display-gallery',
         'section.display-framed-image',
@@ -463,161 +552,15 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
         'section.basic-section',
         'divider.line-divider',
         'divider.image-divider',
+        'heading.summary-basic',
+        'heading.summary-animated',
       ]
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
-  collectionName: 'homepages';
-  info: {
-    description: '';
-    displayName: 'Homepage';
-    pluralName: 'homepages';
-    singularName: 'homepage';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Heading: Schema.Attribute.DynamicZone<
-      ['section.heading-summary-animated', 'section.heading-summary-basic']
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::homepage.homepage'
     > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    Section: Schema.Attribute.DynamicZone<
-      [
-        'section.section-location',
-        'section.heading-summary-animated',
-        'section.side-summary',
-        'section.section-with-framed-text',
-        'section.image-between-framed',
-        'section.heading-summary-basic',
-        'section.framed-between-image',
-        'section.display-gallery',
-        'section.display-framed-image',
-        'section.display-form',
-        'section.display-btn',
-        'section.carrousel',
-        'section.basic-section',
-        'divider.line-divider',
-        'divider.image-divider',
-      ]
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiNotreCabinetNotreCabinet extends Struct.SingleTypeSchema {
-  collectionName: 'notre_cabinets';
-  info: {
-    description: '';
-    displayName: 'Notre Cabinet';
-    pluralName: 'notre-cabinets';
-    singularName: 'notre-cabinet';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Heading: Schema.Attribute.DynamicZone<
-      ['section.heading-summary-animated', 'section.heading-summary-basic']
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::notre-cabinet.notre-cabinet'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    Section: Schema.Attribute.DynamicZone<
-      [
-        'section.side-summary',
-        'section.section-with-framed-text',
-        'section.section-location',
-        'section.image-between-framed',
-        'section.heading-summary-animated',
-        'section.heading-summary-basic',
-        'section.framed-between-image',
-        'section.display-gallery',
-        'section.display-framed-image',
-        'section.display-form',
-        'section.display-btn',
-        'section.carrousel',
-        'section.basic-section',
-        'divider.line-divider',
-        'divider.image-divider',
-      ]
-    >;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiPartenairePartenaire extends Struct.SingleTypeSchema {
-  collectionName: 'partenaires';
-  info: {
-    description: '';
-    displayName: 'Nos Partenaires';
-    pluralName: 'partenaires';
-    singularName: 'partenaire';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Heading: Schema.Attribute.DynamicZone<
-      ['section.heading-summary-animated', 'section.heading-summary-basic']
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::partenaire.partenaire'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    Section: Schema.Attribute.DynamicZone<
-      [
-        'section.side-summary',
-        'section.section-with-framed-text',
-        'section.section-location',
-        'section.image-between-framed',
-        'section.heading-summary-animated',
-        'section.heading-summary-basic',
-        'section.framed-between-image',
-        'section.display-gallery',
-        'section.display-framed-image',
-        'section.display-form',
-        'section.display-btn',
-        'section.carrousel',
-        'section.basic-section',
-        'divider.line-divider',
-        'divider.image-divider',
-      ]
-    >;
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1286,11 +1229,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::activite.activite': ApiActiviteActivite;
-      'api::contact.contact': ApiContactContact;
-      'api::homepage.homepage': ApiHomepageHomepage;
-      'api::notre-cabinet.notre-cabinet': ApiNotreCabinetNotreCabinet;
-      'api::partenaire.partenaire': ApiPartenairePartenaire;
+      'api::couleur.couleur': ApiCouleurCouleur;
+      'api::page.page': ApiPagePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

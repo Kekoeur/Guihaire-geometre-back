@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_type_framed_types",
+  "info": {
+    "displayName": "FramedType"
+  },
+  "options": {},
+  "attributes": {
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "transparent",
+        "colored"
+      ]
+    }
+  }
+}

@@ -11,6 +11,22 @@
     },
     "RedirUrl": {
       "type": "string"
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "basic",
+        "link",
+        "go-to",
+        "explore",
+        "explore2",
+        "explore3",
+        "excavated",
+        "excavated2",
+        "paper-plane",
+        "paper-plane2"
+      ],
+      "default": "basic"
     }
   }
 }
